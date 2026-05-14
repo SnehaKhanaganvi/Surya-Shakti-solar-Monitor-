@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Surya-Shakti</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_generation">Generation</string>
+    <string name="nav_consumption">Consumption</string>
+    <string name="nav_savings">Savings</string>
+    <string name="notification_channel_name">Surya-Shakti Alerts</string>
+</resources>

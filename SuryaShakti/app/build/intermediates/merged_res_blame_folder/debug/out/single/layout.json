@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/fragment_savings.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/fragment_savings.xml"
+    },
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/item_savings_row.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/item_savings_row.xml"
+    },
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/fragment_consumption.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/fragment_consumption.xml"
+    },
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/fragment_generation_log.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/fragment_generation_log.xml"
+    },
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/fragment_dashboard.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.suryashakti.solarmonitor.app-mergeDebugResources-52:/layout/activity_main.xml",
+        "source": "com.suryashakti.solarmonitor.app-main-55:/layout/activity_main.xml"
+    }
+]

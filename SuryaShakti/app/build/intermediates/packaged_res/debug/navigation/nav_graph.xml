@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.suryashakti.solarmonitor.ui.dashboard.DashboardFragment"
+        android:label="Dashboard" />
+    <fragment
+        android:id="@+id/generationLogFragment"
+        android:name="com.suryashakti.solarmonitor.ui.generation.GenerationLogFragment"
+        android:label="Generation Log" />
+    <fragment
+        android:id="@+id/consumptionFragment"
+        android:name="com.suryashakti.solarmonitor.ui.consumption.ConsumptionFragment"
+        android:label="Consumption" />
+    <fragment
+        android:id="@+id/savingsFragment"
+        android:name="com.suryashakti.solarmonitor.ui.savings.SavingsFragment"
+        android:label="30-Day Savings" />
+</navigation>

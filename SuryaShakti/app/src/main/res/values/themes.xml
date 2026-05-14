@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SuryaShakti" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/solar_yellow</item>
+        <item name="colorPrimaryVariant">@color/solar_yellow_dark</item>
+        <item name="colorOnPrimary">@color/solar_black</item>
+        <item name="colorSecondary">@color/solar_green</item>
+        <item name="colorOnSecondary">@color/solar_black</item>
+        <item name="colorSurface">@color/solar_dark_gray</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:colorBackground">@color/solar_black</item>  <!-- ✅ Fixed -->
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorError">@color/solar_red</item>
+        <item name="android:windowBackground">@color/solar_black</item>
+        <item name="android:statusBarColor">@color/solar_black</item>
+        <item name="android:navigationBarColor">@color/solar_dark_gray</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/solar_yellow</item>
+        <item name="colorControlNormal">@color/text_secondary</item>
+    </style>
+</resources>

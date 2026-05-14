@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/solar_black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🔌 Consumption Tracker" android:textColor="@color/solar_yellow"
+            android:textSize="22sp" android:textStyle="bold" android:paddingBottom="4dp"/>
+
+        <TextView android:id="@+id/tvDate" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="@color/text_secondary"
+            android:textSize="13sp" android:paddingBottom="16dp"/>
+
+        <!-- Meter Readings Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/solar_dark_gray" app:cardCornerRadius="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Meter Readings" android:textColor="@color/solar_yellow"
+                    android:textSize="15sp" android:textStyle="bold" android:paddingBottom="12dp"/>
+
+                <!-- Previous Reading -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Previous Reading (kWh) — optional"
+                    app:boxStrokeColor="@color/solar_yellow" app:hintTextColor="@color/text_secondary"
+                    app:helperText="Leave blank for direct kWh entry"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPreviousReading"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="@color/white"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Current Reading -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Current Reading / Direct kWh consumed"
+                    app:boxStrokeColor="@color/solar_yellow" app:hintTextColor="@color/solar_yellow"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCurrentReading"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="@color/white"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Per Unit Rate -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Per-Unit Rate (₹/kWh)"
+                    app:boxStrokeColor="@color/solar_yellow" app:hintTextColor="@color/text_secondary"
+                    app:helperText="Default: ₹8.00/kWh (typical Indian tariff)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRate"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" android:textColor="@color/white"
+                        android:text="8.00"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:id="@+id/tvRate" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/text_secondary"
+                    android:textSize="11sp" android:paddingBottom="12dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCalculate"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="1" android:layout_marginEnd="6dp"
+                        android:text="🧮 Calculate"
+                        android:textColor="@color/solar_black"
+                        app:backgroundTint="@color/solar_yellow_dark" app:cornerRadius="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSave"
+                        android:layout_width="0dp" android:layout_height="52dp"
+                        android:layout_weight="1" android:layout_marginStart="6dp"
+                        android:text="✅ Save"
+                        android:textColor="@color/solar_black"
+                        app:backgroundTint="@color/solar_yellow" app:cornerRadius="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Results Card (hidden until calculated) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResults"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" android:visibility="gone"
+            app:cardBackgroundColor="@color/solar_dark_gray" app:cardCornerRadius="12dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Calculation Results" android:textColor="@color/solar_yellow"
+                    android:textSize="15sp" android:textStyle="bold" android:paddingBottom="10dp"/>
+
+                <TextView android:id="@+id/tvResultConsumed" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/white"
+                    android:textSize="14sp" android:paddingBottom="4dp"/>
+
+                <TextView android:id="@+id/tvResultNet" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/solar_green"
+                    android:textSize="14sp" android:textStyle="bold" android:paddingBottom="4dp"/>
+
+                <TextView android:id="@+id/tvResultSavings" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/solar_yellow"
+                    android:textSize="14sp" android:paddingBottom="4dp"/>
+
+                <TextView android:id="@+id/tvResultExport" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/solar_green"
+                    android:textSize="13sp" android:paddingBottom="4dp"/>
+
+                <TextView android:id="@+id/tvResultGridCost" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textColor="@color/solar_red"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Over-gen banner -->
+        <TextView
+            android:id="@+id/tvOverGenBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#1A00E676"
+            android:padding="12dp"
+            android:textColor="@color/solar_green"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>
