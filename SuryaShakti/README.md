@@ -19,6 +19,14 @@ A smart Android application for monitoring solar energy generation, consumption,
 - 🌤️ **Weather Simulator** — Simulates weather to estimate daily solar output
 - 🔔 **Peak Sun Alerts** — Push notifications during optimal solar generation periods
 - 🟢 **Green Score** — A score reflecting your daily solar self-sufficiency
+<img width="391" height="729" alt="dashboard" src="https://github.com/user-attachments/assets/9bb81ccd-683d-4989-ba2e-1657794feed8" />
+<img width="397" height="737" alt="generation" src="https://github.com/user-attachments/assets/76784449-112e-45c6-a5e7-01957b8db19d" />
+<img width="412" height="736" alt="consumption" src="https://github.com/user-attachments/assets/88b33704-4fbb-4b18-a4e0-417ab5cef73c" />
+<img width="389" height="738" alt="savings" src="https://github.com/user-attachments/assets/3d7b04d5-38bb-400f-a513-e32fb040a8b8" />
+
+
+
+
 
 ---
 
